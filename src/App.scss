@@ -1,0 +1,27 @@
+@import 'styles/variables';
+
+.content-container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.flex-grid {
+  display: flex;
+  margin: auto -1rem 1rem;
+}
+
+.col {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.sidebar {
+  flex: 1;
+  padding: 1rem;
+}
+
+.main {
+  flex: 3;
+  padding: 1rem;
+  border-left: 1px solid $border-color;
+}
