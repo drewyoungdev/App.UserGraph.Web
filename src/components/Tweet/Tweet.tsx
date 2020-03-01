@@ -12,19 +12,17 @@ const Tweet: React.FC<TweetProps> = (props) => {
     const minRows = 1;
     const maxRows = 10;
     const maxCharacters = 280;
+    const remainingCharactersWarning = 20;
 
-    const [tweetText, setTweetText] = useState<string>("");
+    const [tweetText, setTweetText] = useState<string>('');
     const [isTweetEnabled, setIsTweetEnabled] = useState<boolean>(false);
     const [textAreaRows, setTextAreaRows] = useState<number>(1);
-    const [charsUsed, setCharsUsed] = useState<number>(0);
     const [percentageCharsUsed, setPercentageCharsUsed] = useState<number>(0);
-    const [remainingChars, setRemainingChars] = useState<number>(0);
-    // const [highlightedText, setHighlightedText] = useState<string>("");
+    const [remainingChars, setRemainingChars] = useState<number | null>(null);
+    // const [highlightedText, setHighlightedText] = useState<string>('');
 
     const calculateRemainingChars = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         const charsUsed = event.target.value.length;
-
-        setCharsUsed(charsUsed);
 
         setRemainingChars(maxCharacters - charsUsed);
 
@@ -68,6 +66,18 @@ const Tweet: React.FC<TweetProps> = (props) => {
         }
     }
 
+    const getChartColor = () => {
+        if (remainingChars != null && remainingChars <= 0) {
+            return 'red';
+        }
+
+        if (remainingChars != null && remainingChars <= remainingCharactersWarning) {
+            return 'orange';
+        }
+
+        return '';
+    }
+
     return (
         <div className="tweet">
             <div className="tweet-create">
@@ -102,17 +112,16 @@ const Tweet: React.FC<TweetProps> = (props) => {
                         Tweet
                     </div>
                     {
-                        maxCharacters - charsUsed <= 10
-                        ?
-                        <div className={`${maxCharacters - charsUsed > 0 ? "char-limit-warning" : "char-limit-error"}  $tweet-footer-item`}>
-                            {remainingChars}
-                        </div>
-                        :
                         <div className="tweet-footer-item char-circular-progress-bar">
                             <CircularProgressbar
                                 value={percentageCharsUsed}
-                                strokeWidth={15}
-                                styles={buildStyles({ pathTransitionDuration: 0.1 })}
+                                text={remainingChars != null && remainingChars <= remainingCharactersWarning ? remainingChars.toString() : ''}
+                                styles={buildStyles({
+                                    pathTransitionDuration: 0.1,
+                                    textSize: '2.25rem',
+                                    textColor: getChartColor(),
+                                    pathColor: getChartColor()
+                                })}
                             />
                         </div>
                     }
