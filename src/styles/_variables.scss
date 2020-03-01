@@ -7,3 +7,91 @@ $primary-color-20: #cae2fc;
 $primary-color-hover: #e3f1fc;
 $border-color: #e6ecf0;
 
+$base-button-rem: 0.4rem;
+$button-factor: 2;
+
+.button {
+    cursor: pointer;
+    padding: 0.75rem 1.5rem 0.75rem 1.5rem;
+    border-radius: 40px;
+    font-weight: bolder;
+}
+
+.button-primary-med {
+    @extend .button;
+    background-color: $primary-color;
+    font-size: ($base-button-rem * $button-factor);
+    color: white;
+}
+
+.button-primary-med-disabled {
+    @extend .button-primary-med;
+    cursor: default;
+    background-color: $primary-color-20;
+}
+
+$base-margin-padding-rem: 0.5rem;
+$margin-padding-factor: 4;
+
+// top right bottom left
+// create for loop for each permutation?
+
+.mt-sm {
+    margin-top: $base-margin-padding-rem;
+}
+
+.mt-med {
+    margin-top: ($base-margin-padding-rem * $margin-padding-factor);
+}
+
+.mt-lg {
+    margin-top: ($base-margin-padding-rem * $margin-padding-factor * $margin-padding-factor);
+}
+
+.mr-sm {
+    margin-right: $base-margin-padding-rem;
+}
+
+.mr-med {
+    margin-right: ($base-margin-padding-rem * $margin-padding-factor);
+}
+
+.mr-lg {
+    margin-right: ($base-margin-padding-rem * $margin-padding-factor * $margin-padding-factor);
+}
+
+.mb-sm {
+    margin-bottom: $base-margin-padding-rem;
+}
+
+.mb-med {
+    margin-bottom: ($base-margin-padding-rem * $margin-padding-factor);
+}
+
+.mb-lg {
+    margin-bottom: ($base-margin-padding-rem * $margin-padding-factor * $margin-padding-factor);
+}
+
+.ml-sm {
+    margin-left: $base-margin-padding-rem;
+}
+
+.ml-med {
+    margin-left: ($base-margin-padding-rem * $margin-padding-factor);
+}
+
+.ml-lg {
+    margin-left: ($base-margin-padding-rem * $margin-padding-factor * $margin-padding-factor);
+}
+
+.pt-sm {
+    padding-top: $base-margin-padding-rem;
+}
+
+.pt-med {
+    padding-top: ($base-margin-padding-rem * $margin-padding-factor);
+}
+
+.pt-lg {
+    padding-top: ($base-margin-padding-rem * $margin-padding-factor * $margin-padding-factor);
+}

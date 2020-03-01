@@ -10,18 +10,13 @@
   margin: auto -1rem 1rem;
 }
 
-.col {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-}
-
 .sidebar {
   flex: 1;
-  padding: 1rem;
+  padding: 1rem 0 0 0;
 }
 
 .main {
   flex: 3;
-  padding: 1rem;
+  padding: 1rem 0 0 0;
   border-left: 1px solid $border-color;
 }

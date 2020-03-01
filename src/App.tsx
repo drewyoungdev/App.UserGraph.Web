@@ -11,11 +11,11 @@ function App() {
     <BrowserRouter>
       <div className="content-container">
           <div className="flex-grid">
-            <div className="col sidebar">
+            <div className="sidebar">
               <Sidebar />
             </div>
             <br />
-            <div className="col main">
+            <div className="main">
               <Switch>
                 <Route path="/" exact component={Home} />
                 {/* Make profile take in ID */}
