@@ -10,11 +10,9 @@
 }
 
 .tweet-draft-editor {
+	line-height: 24px;
     width:100%;
     height:100%;
-    // overflow: auto;
-    // word-break: break-word;
-    // word-wrap: break-word;
     border: none;
     resize: none;
     outline: black;
@@ -28,4 +26,18 @@
     flex-direction: row-reverse;
     -webkit-box-align: center;
     align-items: center;
+}
+
+.tweet-footer-item {
+    margin-left: 1rem;
+}
+
+.char-limit-warning {
+    color: orange;
+    font-weight: bolder;
+}
+
+.char-limit-error {
+    color: red;
+    font-weight: bolder;
 }
