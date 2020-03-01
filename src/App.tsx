@@ -1,17 +1,18 @@
 import React from 'react';
 import './App.scss';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Sidebar from './components/Sidebar/Sidebar';
+import NavSidebar from './components/NavSidebar/NavSidebar';
 import Home from './components/Home/Home';
 import Profile from './components/Profile/Profile';
+import RecSidebar from './components/RecSideBar/RecSideBar';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="content-container">
           <div className="flex-grid">
-            <div className="sidebar">
-              <Sidebar />
+            <div className="nav-sidebar">
+              <NavSidebar />
             </div>
             <br />
             <div className="main">
@@ -20,6 +21,9 @@ function App() {
                 {/* Make profile take in ID */}
                 <Route path="/profile" exact component={Profile} />
               </Switch>
+            </div>
+            <div className="rec-sidebar">
+              <RecSidebar />
             </div>
         </div>
       </div>
