@@ -1,5 +1,8 @@
 @import '../../styles/variables';
 
-.title {
-    font-weight: bolder;
+.title-section {
+    @extend .section;
+}
+.tweet-section {
+    @extend .section;
 }

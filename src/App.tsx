@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar/Sidebar';

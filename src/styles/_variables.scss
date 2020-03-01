@@ -10,6 +10,11 @@ $border-color: #e6ecf0;
 $base-button-rem: 0.4rem;
 $button-factor: 2;
 
+.section {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $border-color;
+}
+
 .button {
     cursor: pointer;
     padding: 0.75rem 1.5rem 0.75rem 1.5rem;

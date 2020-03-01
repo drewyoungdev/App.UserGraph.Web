@@ -5,14 +5,16 @@ import Tweet from '../Tweet/Tweet';
 const Home: React.FC = () => {
     return (
         <>
-            <div className="ml-med title">
-                Home
+            <div className="title-section">
+                <div className="ml-med">
+                    Home
+                </div>
             </div>
-            <hr/>
-            <div className="ml-med">
-                <Tweet onTweetClick={console.log}/>
+            <div className="tweet-section">
+                <div className="ml-med">
+                    <Tweet onTweetClick={console.log}/>
+                </div>
             </div>
-            <hr />
         </>
     )
 }
