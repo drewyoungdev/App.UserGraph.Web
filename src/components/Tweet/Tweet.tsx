@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import './Tweet.scss';
 
 interface TweetProps {
@@ -17,6 +19,7 @@ const Tweet: React.FC<TweetProps> = (props) => {
     const [charsUsed, setCharsUsed] = useState<number>(0);
     const [percentageCharsUsed, setPercentageCharsUsed] = useState<number>(0);
     const [remainingChars, setRemainingChars] = useState<number>(0);
+    // const [highlightedText, setHighlightedText] = useState<string>("");
 
     const calculateRemainingChars = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         const charsUsed = event.target.value.length;
@@ -27,7 +30,11 @@ const Tweet: React.FC<TweetProps> = (props) => {
 
         const percentage = event.target.value.length / maxCharacters;
 
-        setPercentageCharsUsed(Math.round((percentage * 100)));
+        setPercentageCharsUsed(percentage * 100);
+
+        // charsUsed > maxCharacters
+        //     ? setHighlightedText(event.target.value.substring(maxCharacters - 1, charsUsed - 1))
+        //     : setHighlightedText("");
     }
 
 	const updateRows = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -101,8 +108,12 @@ const Tweet: React.FC<TweetProps> = (props) => {
                             {remainingChars}
                         </div>
                         :
-                        <div className="tweet-footer-item">
-                            {percentageCharsUsed}%
+                        <div className="tweet-footer-item char-circular-progress-bar">
+                            <CircularProgressbar
+                                value={percentageCharsUsed}
+                                strokeWidth={15}
+                                styles={buildStyles({ pathTransitionDuration: 0.1 })}
+                            />
                         </div>
                     }
                 </div>
