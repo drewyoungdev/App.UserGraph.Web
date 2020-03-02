@@ -1,8 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.scss';
-import Tweet from '../Tweet/Tweet';
+import TweetCreator from '../TweetCreator/TweetCreator';
+import { UserTweet } from '../../models/UserTweet';
+import TweetCard from '../TweetCard/TweetCard';
 
 const Home: React.FC = () => {
+    const fakeTweets = () => {
+        return [
+            {
+                createdByUser: {
+                    name: 'user_one'
+                },
+                tweet: {
+                    text: 'hello world',
+                    createdDate: new Date()
+                }
+            },
+            {
+                createdByUser: {
+                    name: 'user_two'
+                },
+                tweet: {
+                    text: 'goodbye world',
+                    createdDate: new Date()
+                }
+            }
+        ]
+    }
+    const [timeline, setTimeline] = useState<UserTweet[]>(fakeTweets());
+
     return (
         <>
             <div className="title-section">
@@ -12,8 +38,11 @@ const Home: React.FC = () => {
             </div>
             <div className="tweet-section">
                 <div className="ml-med">
-                    <Tweet onTweetClick={console.log}/>
+                    <TweetCreator onTweetClick={console.log}/>
                 </div>
+            </div>
+            <div className="timeline-section">
+                {timeline.map((userTweet) => <TweetCard />)}
             </div>
         </>
     )

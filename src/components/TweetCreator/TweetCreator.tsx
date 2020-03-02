@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import './Tweet.scss';
+import './TweetCreator.scss';
 
 interface TweetProps {
     onTweetClick: (tweetText: string) => void;
 }
 
-const Tweet: React.FC<TweetProps> = (props) => {
+const TweetCreator: React.FC<TweetProps> = (props) => {
     // If additional components need re-sizable textarea then move into separate component
     const minRows = 1;
     const maxRows = 10;
@@ -131,4 +131,4 @@ const Tweet: React.FC<TweetProps> = (props) => {
     )
 }
 
-export default Tweet;
+export default TweetCreator;
