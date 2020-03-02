@@ -1,27 +1,25 @@
 @import 'styles/variables';
 
-// .content-container {
-//     max-width: 960px;
-//     margin: 0 auto;
-// }
+.content-container {
+    max-width: 960px;
+    margin: 0 auto;
+}
 
 .flex-grid {
   display: flex;
 }
 
 .nav-sidebar {
-  flex: 1;
   padding: 1rem 0 0 1rem;
 }
 
 .main {
-  flex: 3;
   padding: 1rem 0 0 0;
   border-right: 1px solid $border-color;
   border-left: 1px solid $border-color;
 }
 
 .rec-sidebar {
-  flex: 2;
+  flex: 1;
   padding: 1rem 0 0 1rem;
 }

@@ -3,11 +3,11 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import './TweetCreator.scss';
 
-interface TweetProps {
+interface TweetCreatorProps {
     onTweetClick: (tweetText: string) => void;
 }
 
-const TweetCreator: React.FC<TweetProps> = (props) => {
+const TweetCreator: React.FC<TweetCreatorProps> = (props) => {
     // If additional components need re-sizable textarea then move into separate component
     const minRows = 1;
     const maxRows = 10;
@@ -21,12 +21,10 @@ const TweetCreator: React.FC<TweetProps> = (props) => {
     const [remainingChars, setRemainingChars] = useState<number | null>(null);
     // const [highlightedText, setHighlightedText] = useState<string>('');
 
-    const calculateRemainingChars = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-        const charsUsed = event.target.value.length;
-
+    const calculateRemainingChars = (charsUsed: number) => {
         setRemainingChars(maxCharacters - charsUsed);
 
-        const percentage = event.target.value.length / maxCharacters;
+        const percentage = charsUsed / maxCharacters;
 
         setPercentageCharsUsed(percentage * 100);
 
@@ -55,10 +53,8 @@ const TweetCreator: React.FC<TweetProps> = (props) => {
         setTextAreaRows(currentRows < maxRows ? currentRows : maxRows);
     };
 
-    const checkIfTweetEnabled = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-        const charsUsed = event.target.value.length;
-
-        if (event.target.value.length > 0 && maxCharacters >= charsUsed) {
+    const checkIfTweetEnabled = (charsUsed: number) => {
+        if (charsUsed > 0 && maxCharacters >= charsUsed) {
             setIsTweetEnabled(true);
         }
         else {
@@ -90,9 +86,9 @@ const TweetCreator: React.FC<TweetProps> = (props) => {
                     {
                         updateRows(e);
 
-                        calculateRemainingChars(e);
+                        calculateRemainingChars(e.target.value.length);
 
-                        checkIfTweetEnabled(e);
+                        checkIfTweetEnabled(e.target.value.length);
 
                         const tweetText = e.target.value;
 
@@ -105,7 +101,15 @@ const TweetCreator: React.FC<TweetProps> = (props) => {
                         onClick={() =>
                         {
                             if (isTweetEnabled) {
-                                props.onTweetClick(tweetText)
+                                props.onTweetClick(tweetText);
+
+                                setTweetText('');
+
+                                calculateRemainingChars(0);
+
+                                checkIfTweetEnabled(0);
+
+                                setTextAreaRows(1);
                             }
                         }}
                     >

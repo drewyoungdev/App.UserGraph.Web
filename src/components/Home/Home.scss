@@ -4,7 +4,12 @@
     @extend .section;
     font-weight: bolder;
 }
+
 .tweet-section {
     @extend .section;
     border-bottom: 8px solid $border-color;
+}
+
+.timeline-section {
+    @extend .section;
 }

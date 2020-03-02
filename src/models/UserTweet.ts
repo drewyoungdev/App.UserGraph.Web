@@ -8,6 +8,7 @@ export interface User {
 }
 
 export interface Tweet {
+    id: string;
     text: string;
     createdDate: Date;
 }

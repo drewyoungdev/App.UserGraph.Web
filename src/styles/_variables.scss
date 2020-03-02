@@ -4,7 +4,7 @@ $primary-color-80: #6cb9f6;
 $primary-color-60: #8fc7f8;
 $primary-color-40: #aed5fa;
 $primary-color-20: #cae2fc;
-$primary-color-hover: #e3f1fc;
+$primary-color-hover: #f0f7fc;
 $border-color: #e6ecf0;
 
 $base-button-rem: 0.4rem;
@@ -18,7 +18,7 @@ $button-factor: 2;
 
 .section {
     padding-bottom: 1rem;
-    border-bottom: 1px solid $border-color;
+    max-width: 650px;
 }
 
 .button {
@@ -105,4 +105,40 @@ $margin-padding-factor: 4;
 
 .pt-lg {
     padding-top: ($base-margin-padding-rem * $margin-padding-factor * $margin-padding-factor);
+}
+
+.pr-sm {
+    padding-right: $base-margin-padding-rem;
+}
+
+.pr-med {
+    padding-right: ($base-margin-padding-rem * $margin-padding-factor);
+}
+
+.pr-lg {
+    padding-right: ($base-margin-padding-rem * $margin-padding-factor * $margin-padding-factor);
+}
+
+.pb-sm {
+    padding-bottom: $base-margin-padding-rem;
+}
+
+.pb-med {
+    padding-bottom: ($base-margin-padding-rem * $margin-padding-factor);
+}
+
+.pb-lg {
+    padding-bottom: ($base-margin-padding-rem * $margin-padding-factor * $margin-padding-factor);
+}
+
+.pl-sm {
+    padding-left: $base-margin-padding-rem;
+}
+
+.pl-med {
+    padding-left: ($base-margin-padding-rem * $margin-padding-factor);
+}
+
+.pl-lg {
+    padding-left: ($base-margin-padding-rem * $margin-padding-factor * $margin-padding-factor);
 }
