@@ -1,5 +1,16 @@
 @import '../../styles/variables';
 
+.logo {
+    color: $primary-color;
+    cursor: pointer;
+    margin: 0 0.5rem 0rem 1.25rem;
+    padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+    border-radius: 50%;
+}
+.logo:hover {
+    background-color: $primary-color-hover;
+}
+
 .link {
     color: black;
     font-weight: bolder;

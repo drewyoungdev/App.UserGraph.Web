@@ -49,3 +49,35 @@
     word-wrap: break-word;
     word-break: break-all;
 }
+
+.tweet-card-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    margin: 0 0.5rem 0 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border-radius: 50%;
+}
+
+.reply-icon:hover {
+    color: $primary-color;
+}
+.reply-icon:hover > .icon {
+    background-color: $primary-color-20;
+}
+
+.retweet-icon:hover {
+    color: #32CD32;
+}
+.retweet-icon:hover > .icon {
+    background-color: #c2f0c2;
+}
+
+.like-icon:hover {
+    color: #FF69B4;
+}
+.like-icon:hover > .icon {
+    background-color: #ffe1f0;
+}

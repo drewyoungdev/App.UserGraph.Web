@@ -1,6 +1,9 @@
 import React from 'react';
 import './TweetCard.scss';
 import { UserTweet } from '../../models/UserTweet';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart  } from '@fortawesome/free-regular-svg-icons';
+import { faRetweet, faReply  } from '@fortawesome/free-solid-svg-icons';
 
 interface TweetCardProps {
     userTweet: UserTweet
@@ -25,8 +28,23 @@ const TweetCard: React.FC<TweetCardProps> = (props) => {
                     {props.userTweet.tweet.text}
                 </div>
                 <div className="mb-sm tweet-card-row tweet-card-footer">
-                    <div className="tweet-card-row-item">
-                        3.2K
+                    <div className="tweet-card-row-item reply-icon">
+                        <span className="icon">
+                            <FontAwesomeIcon icon={faReply} />
+                        </span>
+                        <span>1.5K</span>
+                    </div>
+                    <div className="tweet-card-row-item retweet-icon">
+                        <span className="icon">
+                            <FontAwesomeIcon icon={faRetweet} />
+                        </span>
+                        <span>1.5K</span>
+                    </div>
+                    <div className="tweet-card-row-item like-icon">
+                        <span className="icon">
+                            <FontAwesomeIcon icon={faHeart} />
+                        </span>
+                        <span>3.2K</span>
                     </div>
                 </div>
             </div>
