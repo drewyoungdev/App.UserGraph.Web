@@ -75,61 +75,59 @@ const TweetCreator: React.FC<TweetCreatorProps> = (props) => {
     }
 
     return (
-        <div className="tweet">
-            <div className="tweet-create">
-                <textarea
-                    className="mb-sm mt-sm tweet-draft-editor"
-                    placeholder="What's happening?"
-                    rows={textAreaRows}
-                    value={tweetText}
-                    onChange={(e) =>
+        <div className="tweet-create">
+            <textarea
+                className="mb-sm mt-sm tweet-draft-editor"
+                placeholder="What's happening?"
+                rows={textAreaRows}
+                value={tweetText}
+                onChange={(e) =>
+                {
+                    updateRows(e);
+
+                    calculateRemainingChars(e.target.value.length);
+
+                    checkIfTweetEnabled(e.target.value.length);
+
+                    const tweetText = e.target.value;
+
+                    setTweetText(tweetText);
+                }}
+            />
+            <div className="mr-sm tweet-create-footer">
+                <div
+                    className={`${isTweetEnabled ? "button-primary-med" : "button-primary-med-disabled"} tweet-footer-item`}
+                    onClick={() =>
                     {
-                        updateRows(e);
+                        if (isTweetEnabled) {
+                            props.onTweetClick(tweetText);
 
-                        calculateRemainingChars(e.target.value.length);
+                            setTweetText('');
 
-                        checkIfTweetEnabled(e.target.value.length);
+                            calculateRemainingChars(0);
 
-                        const tweetText = e.target.value;
+                            checkIfTweetEnabled(0);
 
-                        setTweetText(tweetText);
+                            setTextAreaRows(1);
+                        }
                     }}
-                />
-                <div className="mr-sm tweet-create-footer">
-                    <div
-                        className={`${isTweetEnabled ? "button-primary-med" : "button-primary-med-disabled"} tweet-footer-item`}
-                        onClick={() =>
-                        {
-                            if (isTweetEnabled) {
-                                props.onTweetClick(tweetText);
-
-                                setTweetText('');
-
-                                calculateRemainingChars(0);
-
-                                checkIfTweetEnabled(0);
-
-                                setTextAreaRows(1);
-                            }
-                        }}
-                    >
-                        Tweet
-                    </div>
-                    {
-                        <div className="tweet-footer-item char-circular-progress-bar">
-                            <CircularProgressbar
-                                value={percentageCharsUsed}
-                                text={remainingChars != null && remainingChars <= remainingCharactersWarning ? remainingChars.toString() : ''}
-                                styles={buildStyles({
-                                    pathTransitionDuration: 0.1,
-                                    textSize: '2.25rem',
-                                    textColor: getChartColor(),
-                                    pathColor: getChartColor()
-                                })}
-                            />
-                        </div>
-                    }
+                >
+                    Tweet
                 </div>
+                {
+                    <div className="tweet-footer-item char-circular-progress-bar">
+                        <CircularProgressbar
+                            value={percentageCharsUsed}
+                            text={remainingChars != null && remainingChars <= remainingCharactersWarning ? remainingChars.toString() : ''}
+                            styles={buildStyles({
+                                pathTransitionDuration: 0.1,
+                                textSize: '2.25rem',
+                                textColor: getChartColor(),
+                                pathColor: getChartColor()
+                            })}
+                        />
+                    </div>
+                }
             </div>
         </div>
     )

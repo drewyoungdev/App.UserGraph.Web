@@ -6,7 +6,7 @@ import { faTwitter  } from '@fortawesome/free-brands-svg-icons';
 
 const NavSidebar: React.FC = () => {
     return (
-        <nav className="sidebar-flex">
+        <nav className="sidebar-flex header-one">
             <NavLink exact className="logo" to="/">
                 <FontAwesomeIcon icon={faTwitter} size="2x" />
             </NavLink>

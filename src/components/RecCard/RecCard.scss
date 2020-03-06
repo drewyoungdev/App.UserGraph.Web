@@ -1,0 +1,39 @@
+@import "../../styles/variables";
+
+$rec-card-border-radius: 10px;
+
+.rec-card {
+    border: solid 1px $border-color;
+    background-color: rgb(250, 253, 255);
+    border-radius: $rec-card-border-radius;
+}
+
+.rec-card-section {
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+.rec-card-header {
+    @extend .rec-card-section;
+    display: flex;
+    align-items: stretch;
+    border-bottom: solid 1px $border-color;
+}
+
+.rec-card-body {
+    @extend .rec-card-section;
+}
+
+.rec-card-footer {
+    @extend .rec-card-section;
+    @extend .transition;
+    color: $primary-color;
+    text-decoration: none;
+    border-top: solid 1px $border-color;
+    cursor: pointer;
+}
+
+.rec-card-footer:hover {
+    border-bottom-right-radius: $rec-card-border-radius;
+    border-bottom-left-radius: $rec-card-border-radius;
+    background-color: $primary-color-hover;
+}

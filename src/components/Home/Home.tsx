@@ -47,7 +47,7 @@ const Home: React.FC = () => {
 
     return (
         <>
-            <div className="title-section">
+            <div className="title-section header-one">
                 <div className="ml-med">
                     Home
                 </div>

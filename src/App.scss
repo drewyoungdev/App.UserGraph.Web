@@ -9,18 +9,9 @@
   display: flex;
 }
 
-.nav-sidebar {
-  padding: 0.2rem 0 0 1rem;
-}
-
 .main {
   min-width: 610px;
   padding: 1rem 0 0 0;
   border-right: 1px solid $border-color;
   border-left: 1px solid $border-color;
-}
-
-.rec-sidebar {
-  flex: 1;
-  padding: 1rem 0 0 1rem;
 }

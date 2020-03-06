@@ -13,9 +13,7 @@ function App() {
     <BrowserRouter>
       <div className="content-container">
           <div className="flex-grid">
-            <div className="nav-sidebar">
-              <NavSidebar />
-            </div>
+            <NavSidebar />
             <div className="main">
               <Switch>
                 <Route path="/" exact component={Home} />
@@ -24,9 +22,7 @@ function App() {
                 <Route path="/:username/tweets/:tweetid" exact component={Tweet} />
               </Switch>
             </div>
-            <div className="rec-sidebar">
-              <RecSidebar />
-            </div>
+            <RecSidebar />
         </div>
       </div>
     </BrowserRouter>
