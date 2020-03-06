@@ -4,6 +4,7 @@ import { UserTweet } from '../../models/UserTweet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart  } from '@fortawesome/free-regular-svg-icons';
 import { faRetweet, faReply  } from '@fortawesome/free-solid-svg-icons';
+import TimeAgo from 'react-timeago';
 
 interface TweetCardProps {
     userTweet: UserTweet
@@ -15,13 +16,13 @@ const TweetCard: React.FC<TweetCardProps> = (props) => {
             <div className="ml-sm mr-sm tweet-card-icons">
                 <div className="tweet-card-icons-avatar"></div>
             </div>
-            <div className="ml-sm">
+            <div className="ml-sm tweet-card-content">
                 <div className="mb-sm tweet-card-row tweet-card-header">
-                    <a className="tweet-card-row-item">
+                    <div className="tweet-card-row-item tweet-card-header-username">
                         <b>{props.userTweet.createdByUser.name}</b>
-                    </a>
+                    </div>
                     <div className="tweet-card-row-item tweet-card-header-metadata">
-                        {props.userTweet.tweet.createdDate.toString()}
+                        <TimeAgo live={false} date={props.userTweet.tweet.createdDate}/>
                     </div>
                 </div>
                 <div className="mb-sm tweet-card-body">
