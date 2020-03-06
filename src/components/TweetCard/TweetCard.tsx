@@ -5,37 +5,58 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart  } from '@fortawesome/free-regular-svg-icons';
 import { faRetweet, faReply  } from '@fortawesome/free-solid-svg-icons';
 import TimeAgo from 'react-timeago';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 interface TweetCardProps {
     userTweet: UserTweet
 }
 
-// TODO: Add Hover to
-// TODO: Figure out how to pass props or do we use a local store like Redux?
+// TODO: Add Hover to username
+// TOOD: Add back button
 // TODO: Pagination with Gremlin
 const TweetCard: React.FC<TweetCardProps> = (props) => {
+    const history = useHistory();
+
+    const handleTweetCardClick = () => {
+        history.push(`/${props.userTweet.createdByUser.name}/tweets/${props.userTweet.tweet.id}`);
+    }
+
+    const handleUserNameClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        event.stopPropagation();
+        history.push(`/${props.userTweet.createdByUser.name}`);
+    }
+
+    const handleReplyClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        event.stopPropagation();
+        console.log('reply');
+    }
+
+    const handleRetweetClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        event.stopPropagation();
+        console.log('retweet');
+    }
+
+    const handleLikeClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        event.stopPropagation();
+        console.log('like');
+    }
+
     return (
-        // TODO: Link TweetCard to Tweet page. Issue is that it wraps an <a> within an <a>
-        // How do you also prevent router from updating route if an onClick is fired within the route?
-        // <Link
-        //     to={`/${props.userTweet.createdByUser.name}/tweets/${props.userTweet.tweet.id}`}
-        //     className="pl-med pr-med pt-sm pb-sm tweet-card"
-        //     style={{ color: 'inherit', textDecoration: 'inherit'}}
-        // >
-        <div className="pl-med pr-med pt-sm pb-sm tweet-card">
+        <div
+            className="pl-med pr-med pt-sm pb-sm tweet-card"
+            onClick={handleTweetCardClick}
+        >
             <div className="ml-sm mr-sm tweet-card-icons">
                 <div className="tweet-card-icons-avatar"></div>
             </div>
             <div className="ml-sm tweet-card-content">
                 <div className="mb-sm tweet-card-row tweet-card-header">
-                    <Link
-                        to={`/${props.userTweet.createdByUser.name}`}
+                    <div
                         className="tweet-card-row-item tweet-card-header-username"
-                        style={{ color: 'inherit', textDecoration: 'inherit'}}
+                        onClick={handleUserNameClick}
                     >
                         <b>{props.userTweet.createdByUser.name}</b>
-                    </Link>
+                    </div>
                     <div className="tweet-card-row-item tweet-card-header-metadata">
                         <TimeAgo live={false} date={props.userTweet.tweet.createdDate}/>
                     </div>
@@ -46,7 +67,7 @@ const TweetCard: React.FC<TweetCardProps> = (props) => {
                 <div className="mb-sm tweet-card-row tweet-card-footer">
                     <div
                         className="tweet-card-row-item reply-icon"
-                        onClick={() => console.log('reply')}
+                        onClick={handleReplyClick}
                     >
                         <span className="icon">
                             <FontAwesomeIcon icon={faReply} />
@@ -55,7 +76,7 @@ const TweetCard: React.FC<TweetCardProps> = (props) => {
                     </div>
                     <div
                         className="tweet-card-row-item retweet-icon"
-                        onClick={() => console.log('retweet')}
+                        onClick={handleRetweetClick}
                     >
                         <span className="icon">
                             <FontAwesomeIcon icon={faRetweet} />
@@ -64,7 +85,7 @@ const TweetCard: React.FC<TweetCardProps> = (props) => {
                     </div>
                     <div
                         className="tweet-card-row-item like-icon"
-                        onClick={() => console.log('like')}
+                        onClick={handleLikeClick}
                     >
                         <span className="icon">
                             <FontAwesomeIcon icon={faHeart} />
@@ -74,7 +95,6 @@ const TweetCard: React.FC<TweetCardProps> = (props) => {
                 </div>
             </div>
         </div>
-        // </Link>
     )
 }
 

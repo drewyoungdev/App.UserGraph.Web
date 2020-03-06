@@ -1,5 +1,5 @@
 import React from 'react';
-import { RouteProps, RouteComponentProps } from 'react-router-dom';
+import { RouteComponentProps } from 'react-router-dom';
 
 interface ProfileProps extends RouteComponentProps<{ username: string }> {
 }
