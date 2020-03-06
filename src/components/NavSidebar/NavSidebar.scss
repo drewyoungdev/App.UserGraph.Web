@@ -1,6 +1,7 @@
 @import '../../styles/variables';
 
 .logo {
+    @extend .transition;
     color: $primary-color;
     cursor: pointer;
     margin: 0 0.5rem 0rem 1.25rem;

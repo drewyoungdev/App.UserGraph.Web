@@ -1,6 +1,7 @@
 @import '../../styles/variables';
 
 .tweet-card {
+    @extend .transition;
     display: flex;
     flex-direction: row;
     border-bottom: solid 1px $border-color;
@@ -56,9 +57,16 @@
 }
 
 .icon {
+    @extend .transition;
+    background-color: transparent;
     margin: 0 0.5rem 0 1rem;
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     border-radius: 50%;
+}
+
+.icon-text {
+    @extend .transition;
+    background-color: transparent;
 }
 
 .reply-icon:hover {

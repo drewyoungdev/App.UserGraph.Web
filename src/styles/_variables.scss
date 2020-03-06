@@ -10,6 +10,10 @@ $border-color: #e6ecf0;
 $base-button-rem: 0.4rem;
 $button-factor: 2;
 
+.transition {
+    transition: 0.2s ease-in-out;
+}
+
 .sidebar-flex {
     display: flex;
     flex-direction: column;
@@ -22,6 +26,8 @@ $button-factor: 2;
 }
 
 .button {
+    @extend .transition;
+    background-color: transparent;
     cursor: pointer;
     padding: 0.75rem 1.5rem 0.75rem 1.5rem;
     border-radius: 40px;

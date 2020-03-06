@@ -32,19 +32,19 @@ const TweetCard: React.FC<TweetCardProps> = (props) => {
                         <span className="icon">
                             <FontAwesomeIcon icon={faReply} />
                         </span>
-                        <span>1.5K</span>
+                        <span className="icon-text">1.5K</span>
                     </div>
                     <div className="tweet-card-row-item retweet-icon">
                         <span className="icon">
                             <FontAwesomeIcon icon={faRetweet} />
                         </span>
-                        <span>1.5K</span>
+                        <span className="icon-text">1.5K</span>
                     </div>
                     <div className="tweet-card-row-item like-icon">
                         <span className="icon">
                             <FontAwesomeIcon icon={faHeart} />
                         </span>
-                        <span>3.2K</span>
+                        <span className="icon-text">3.2K</span>
                     </div>
                 </div>
             </div>
