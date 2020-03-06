@@ -1,9 +1,14 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 
-const Tweet: React.FC = () => {
+interface TweetProps extends RouteComponentProps<{ username: string, tweetid: string}> {
+
+}
+
+const Tweet: React.FC<TweetProps> = (props) => {
     return (
         <>
-            Tweet
+            Tweet for User: {props.match.params.username} and Tweet Id: {props.match.params.tweetid}
         </>
     )
 }

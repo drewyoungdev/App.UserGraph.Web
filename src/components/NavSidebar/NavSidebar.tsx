@@ -11,7 +11,7 @@ const NavSidebar: React.FC = () => {
                 <FontAwesomeIcon icon={faTwitter} size="2x" />
             </NavLink>
             <NavLink exact activeClassName="active-link" className="link button" to="/">Home</NavLink>
-            <NavLink exact activeClassName="active-link" className="link button" to="/profile">Profile</NavLink>
+            <NavLink exact activeClassName="active-link" className="link button" to={"/user_one"} >Profile</NavLink>
             <NavLink exact activeClassName="active-link" className="link button" to="/explore">Explore</NavLink>
         </nav>
     )

@@ -18,9 +18,9 @@ function App() {
             <div className="main">
               <Switch>
                 <Route path="/" exact component={Home} />
-                {/* Make profile take in ID */}
-                <Route path="/profile" exact component={Profile} />
-                <Route path="/tweet" exact component={Tweet} />
+                <Route path="/:username" exact component={Profile} />
+                <Route path="/:username/tweets/:tweetid" exact component={Tweet} />
+                <Route path="/explore" exact component={Home} />
               </Switch>
             </div>
             <div className="rec-sidebar">

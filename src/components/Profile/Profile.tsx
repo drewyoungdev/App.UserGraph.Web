@@ -1,9 +1,15 @@
 import React from 'react';
+import { RouteProps, RouteComponentProps } from 'react-router-dom';
 
-const Profile: React.FC = () => {
+interface ProfileProps extends RouteComponentProps<{ username: string }> {
+}
+
+const Profile: React.FC<ProfileProps> = (props) => {
+    const username = props.match.params.username;
+
     return (
         <>
-            Profile
+            Profile {username}
         </>
     )
 }
