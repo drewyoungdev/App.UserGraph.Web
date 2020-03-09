@@ -22,7 +22,9 @@ function App() {
                 <Route path="/:username/tweets/:tweetid" exact component={Tweet} />
               </Switch>
             </div>
-            <RecSidebar />
+            <div className="recommendations">
+              <RecSidebar />
+            </div>
         </div>
       </div>
     </BrowserRouter>

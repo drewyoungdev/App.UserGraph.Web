@@ -1,0 +1,37 @@
+@import '../../styles/variables';
+
+.user-information {
+    @extend .transition;
+    padding: 1rem 1rem 1rem 1rem;
+    background-color: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.user-information:hover {
+    background-color: $primary-color-hover;
+}
+
+.user-data {
+    display: flex;
+    flex-direction: row;
+}
+
+.user-data-avatar {
+    vertical-align: middle;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.user-data-name {
+    font-weight: 800;
+}
+
+.user-data-name:hover {
+    @extend .user-data-name;
+    text-decoration: underline;
+}

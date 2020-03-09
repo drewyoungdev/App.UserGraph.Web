@@ -1,4 +1,5 @@
 // https://encycolorpedia.com/38acf4
+$primary-color-dark: #3597d4;
 $primary-color: #38acf4;
 $primary-color-80: #6cb9f6;
 $primary-color-60: #8fc7f8;
@@ -31,8 +32,8 @@ $border-color: lightgrey;
     max-width: 650px;
 }
 
-$base-button-rem: 0.4rem;
-$button-factor: 2;
+$base-button-rem: 0.7rem;
+$button-factor: 1.25;
 
 .button {
     @extend .transition;
@@ -43,17 +44,41 @@ $button-factor: 2;
     font-weight: bolder;
 }
 
-.button-primary-med {
+.button-primary {
     @extend .button;
     background-color: $primary-color;
-    font-size: ($base-button-rem * $button-factor);
     color: white;
 }
 
+.button-primary:hover {
+    background-color: $primary-color-dark;
+}
+
+.button-primary-med {
+    @extend .button-primary;
+    font-size: ($base-button-rem * $button-factor);
+}
 .button-primary-med-disabled {
     @extend .button-primary-med;
     cursor: default;
     background-color: $primary-color-20;
+}
+
+.button-tertiary {
+    @extend .button;
+    background-color: transparent;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+}
+
+.button-tertiary:hover {
+    background-color: $primary-color-20;
+}
+
+.button-tertiary-sm {
+    @extend .button-tertiary;
+    font-size: $base-button-rem;
+    max-height: 1rem;
 }
 
 $base-margin-padding-rem: 0.5rem;
