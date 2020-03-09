@@ -1,0 +1,48 @@
+$base-button-rem: 0.7rem;
+$button-factor: 1.25;
+
+.button {
+    @extend .transition;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0.75rem 1.5rem 0.75rem 1.5rem;
+    border-radius: 40px;
+    font-weight: bolder;
+}
+
+.button-primary {
+    @extend .button;
+    background-color: $primary-color;
+    color: white;
+}
+
+.button-primary:hover {
+    background-color: $primary-color-dark;
+}
+
+.button-primary-med {
+    @extend .button-primary;
+    font-size: ($base-button-rem * $button-factor);
+}
+.button-primary-med-disabled {
+    @extend .button-primary-med;
+    cursor: default;
+    background-color: $primary-color-20;
+}
+
+.button-tertiary {
+    @extend .button;
+    background-color: transparent;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+}
+
+.button-tertiary:hover {
+    background-color: $primary-color-20;
+}
+
+.button-tertiary-sm {
+    @extend .button-tertiary;
+    font-size: $base-button-rem;
+    max-height: 1rem;
+}

@@ -43,14 +43,14 @@ const TweetCard: React.FC<TweetCardProps> = (props) => {
 
     return (
         <div
-            className="pl-med pr-med pt-sm pb-sm tweet-card"
+            className="pl-med pr-med pt-sm pb-sm flex-row tweet-card"
             onClick={handleTweetCardClick}
         >
-            <div className="ml-sm mr-sm tweet-card-icons">
-                <div className="tweet-card-icons-avatar"></div>
+            <div className="ml-sm mr-sm flex-column">
+                <img src="https://via.placeholder.com/150" alt="Avatar" className="avatar-med" />
             </div>
             <div className="ml-sm tweet-card-content">
-                <div className="mb-sm tweet-card-row tweet-card-header">
+                <div className="mb-sm flex-row-center tweet-card-header">
                     <div
                         className="tweet-card-row-item tweet-card-header-username"
                         onClick={handleUserNameClick}
@@ -64,7 +64,7 @@ const TweetCard: React.FC<TweetCardProps> = (props) => {
                 <div className="mb-sm tweet-card-body">
                     {props.userTweet.tweet.text}
                 </div>
-                <div className="mb-sm tweet-card-row tweet-card-footer">
+                <div className="mb-sm flex-row-even tweet-card-footer">
                     <div
                         className="tweet-card-row-item reply-icon"
                         onClick={handleReplyClick}

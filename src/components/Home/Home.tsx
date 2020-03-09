@@ -46,7 +46,7 @@ const Home: React.FC = () => {
     const [timeline, setTimeline] = useState<UserTweet[]>(fakeTweets);
 
     return (
-        <>
+        <div className="home">
             <div className="title-section header-one">
                 <div className="ml-med">
                     Home
@@ -66,7 +66,7 @@ const Home: React.FC = () => {
                     />)
                 }
             </div>
-        </>
+        </div>
     )
 }
 

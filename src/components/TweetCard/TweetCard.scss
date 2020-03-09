@@ -2,21 +2,12 @@
 
 .tweet-card {
     @extend .transition;
-    display: flex;
-    flex-direction: row;
     border-bottom: solid 1px $border-color;
     cursor: pointer;
 }
 
 .tweet-card:hover {
     background-color: $primary-color-hover;
-}
-
-.tweet-card-row {
-    display: flex;
-    flex-direction: row;
-    -webkit-box-align: center;
-    align-items: center;
 }
 
 .tweet-card-row-item {
@@ -35,20 +26,6 @@
     color: grey;
 }
 
-.tweet-card-icons {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.tweet-card-icons-avatar {
-  height: 3.5rem;
-  width: 3.5rem;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-}
-
 .tweet-card-content {
     width: 100%;
 }
@@ -57,13 +34,6 @@
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-all;
-}
-
-.tweet-card-footer {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: space-between;
 }
 
 .icon {

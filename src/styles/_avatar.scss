@@ -1,0 +1,13 @@
+$base-avatar-rem: 1.5rem;
+$avatar-factor: 2;
+
+.avatar {
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+.avatar-med {
+    @extend .avatar;
+    width: $base-avatar-rem * $avatar-factor;
+    height: $base-avatar-rem * $avatar-factor;
+}

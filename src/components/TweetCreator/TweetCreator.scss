@@ -8,21 +8,14 @@
 .tweet-draft-editor {
     font-size: 1.2rem;
 	line-height: 24px;
-    width:100%;
-    height:100%;
+    width: 95%;
+    height: 100%;
     border: none;
     resize: none;
     outline: black;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-}
-
-.tweet-create-footer {
-    display: flex;
-    flex-direction: row-reverse;
-    -webkit-box-align: center;
-    align-items: center;
 }
 
 .tweet-footer-item {

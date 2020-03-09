@@ -1,5 +1,13 @@
 @import '../../styles/variables';
 
+.home {
+    width: 100%;
+}
+
+.section {
+    padding-bottom: 1rem;
+}
+
 .title-section {
     @extend .section;
 }

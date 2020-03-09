@@ -1,7 +1,13 @@
 @import 'styles/variables';
+@import 'styles/buttons';
+@import 'styles/typography';
+@import 'styles/avatar';
+@import 'styles/margin-padding';
+@import 'styles/flex';
 
 .content-container {
-  max-width: 90%;
+  max-width: 1375px;
+
   margin: 0 auto;
 }
 
@@ -10,7 +16,7 @@
 }
 
 .main {
-  min-width: 610px;
+  flex-basis: 56%;
   padding: 1rem 0 0 0;
   border-right: 1px solid $border-color;
   border-left: 1px solid $border-color;

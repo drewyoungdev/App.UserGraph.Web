@@ -94,7 +94,7 @@ const TweetCreator: React.FC<TweetCreatorProps> = (props) => {
                     setTweetText(tweetText);
                 }}
             />
-            <div className="mr-sm tweet-create-footer">
+            <div className="mr-sm flex-row-reverse-center">
                 <div
                     className={`${isTweetEnabled ? "button-primary-med" : "button-primary-med-disabled"} tweet-footer-item`}
                     onClick={() =>
