@@ -13,7 +13,9 @@ function App() {
     <BrowserRouter>
       <div className="content-container">
           <div className="flex-grid">
-            <NavSidebar />
+            <div className="navigation">
+              <NavSidebar />
+            </div>
             <div className="main">
               <Switch>
                 <Route path="/" exact component={Home} />

@@ -20,6 +20,11 @@ $button-factor: 1.25;
     background-color: $primary-color-dark;
 }
 
+.button-primary-sm {
+    @extend .button-primary;
+    font-size: ($base-button-rem);
+}
+
 .button-primary-med {
     @extend .button-primary;
     font-size: ($base-button-rem * $button-factor);
